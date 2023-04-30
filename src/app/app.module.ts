@@ -1,16 +1,51 @@
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMatMenuModule } from './../lib/ngx-mat-menu.module';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTableModule } from '@angular/material/table';
+import { DialogTestComponent } from './dialogs/dialog-test/dialog-test.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddComponent } from './components/add/add.component'
+import { EditComponent } from './components/edit/edit.component';
+import { DeleteComponent } from './components/delete/delete.component';
+import { ListComponent } from './components/list/list.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    SettingsComponent,
+    DialogTestComponent,
+    AddComponent,
+    EditComponent,
+    DeleteComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    NgxMatMenuModule,
+    AppRoutingModule,
+    CommonModule,
+    FlexLayoutModule,
+    MatTableModule,
+    MatButtonModule,
+    MatDialogModule,
+    HammerModule
+  ],
+  entryComponents: [
+    DialogTestComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

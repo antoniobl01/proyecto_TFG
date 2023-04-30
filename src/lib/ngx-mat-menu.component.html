@@ -1,0 +1,145 @@
+<div id="cont" style="height: 100%;width: 100%;" fxLayout="row" fxLayoutAlign="space-between stretch">
+    <!-- SIDEBAR -->
+    <div style="overflow-x: hidden; max-width: 90vw; box-shadow: 0px 0px 10px #777777;" [style.width]="widthSidebar"
+        [style.position]="posSidebar" [ngStyle]="themeSidebar" fxLayout="column" fxLayoutAlign="start start"
+        class="app-sidebar" *ngIf="show" [style.border]="borderSidebar">
+
+        <!-- SIDEBAR HEADER -->
+        <div class="app-sidebar-header" [style.border-bottom]="borderSidebarHeader" [ngStyle]="themeSidebarHeader">
+            <!-- 
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-icon style="margin-right: 10px;" *ngIf="headerIcon">{{headerIcon}}</mat-icon> {{headerText}}
+            </div>
+            -->
+            <div fxLayout="column" fxLayoutAlign="start stretch" style="height: 100%;">
+                <div fxFlex *ngIf="headerPicture" fxLayout="row" fxLayoutAlign="start center">
+                    <div [ngStyle]="{ 'background-image': 'url(' + headerPicture + ')'}" class="app-header-picture"
+                        (click)="profile_Click($event)">
+                    </div>
+                </div>
+                <div fxFlex fxLayout="column" fxLayoutAlign="center start">
+                    <span class="app-header-title" [style.color]="headerTitleColor">{{headerTitle}}</span>
+                    <span class="app-header-subtitle" [style.color]="headerSubtitleColor">{{headerSubtitle}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR LIST -->
+        <div fxFlex fxLayout="column" fxLayoutAlign="start start"
+            style="overflow: auto; width: 100%;overflow-x: hidden;">
+
+            <div *ngFor="let item of arrMenuOptions" [style.border-top]="borderMenuItems" style="width: 100%;"
+                fxLayout="column" fxLayoutAlign="start stretch">
+
+
+                <!-- EXPENDABLE ITEM -->
+                <mat-expansion-panel #meph *ngIf="item.children && !item.divider" [ngStyle]="themeSidebar"
+                    class="expandable-item" hideToggle="true" style="width: 100%;padding: 0px">
+
+                    <!-- BASE ITEM -->
+                    <mat-expansion-panel-header class="app-sidebar-item" style="padding-left: 0px;"
+                        (click)="selectMenu(item.id,item.route)" libColor>
+                        <div style="width: 100%; height: 45px;" fxLayout="row" fxLayoutAlign="space-between center"
+                            [ngClass]="{'material-selected-menu': activeMenu === item.id}">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <div style="width: 50px;" fxLayout="row" fxLayoutAlign="center center"
+                                    *ngIf="item.icon">
+                                    <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+                                </div>
+                                <div fxFlex fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10px;">
+                                    {{item.title}}
+                                </div>
+                            </div>
+                            <div>
+                                <mat-icon style="margin: 10px;" *ngIf="meph.expanded">expand_less</mat-icon>
+                                <mat-icon style="margin: 10px;" *ngIf="!meph.expanded">expand_more</mat-icon>
+
+                            </div>
+                        </div>
+
+                    </mat-expansion-panel-header>
+
+
+
+
+                    <!-- SUB ITEMS -->
+                    <div fxFlex style="width: 100%;" [id]="item.id" class="sub-item-list">
+
+                        <div class="app-sidebar-item" *ngFor="let sub of item.children" style="width: 100%;"
+                            fxLayout="column" fxLayoutAlign="start stretch"
+                            [ngClass]="{'material-selected-menu': activeMenu === sub.id}"
+                            (click)="selectMenu(sub.id,sub.route)" libColor>
+
+                            <!-- DIVIDER IF NEEDED .. TODO: HEIGHT!
+                            <div *ngIf="sub.divider" style="width: 100%;
+                                border-bottom: 0.5px solid lightgray;">
+                            </div> -->
+
+                            <div class="app-sidebar-item" fxLayout="row" fxLayoutAlign="start stretch"
+                                style="width: 100%;">
+                                <div style="width: 50px;" fxLayout="row" fxLayoutAlign="center center" *ngIf="sub.icon">
+                                    <mat-icon *ngIf="sub.icon">{{sub.icon}}</mat-icon>
+                                </div>
+                                <div fxFlex fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10px;">
+                                    {{sub.title}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </mat-expansion-panel>
+
+                <!-- DIVIDER IF NEEDED .. TODO: SET COLOR -->
+                <div *ngIf="item.divider" style="width: 100%;
+                border-bottom: 0.5px solid lightgray;">
+
+                </div>
+
+
+
+
+                <!-- SIMPLE MENU ITEMS -->
+                <div class="app-sidebar-item" *ngIf="!item.children && !item.divider" fxLayout="row"
+                    fxLayoutAlign="start stretch" [ngClass]="{'material-selected-menu': activeMenu === item.id}"
+                    (click)="selectMenu(item.id,item.route)" libColor>
+                    <div style="width: 50px;" fxLayout="row" fxLayoutAlign="center center" *ngIf="item.icon">
+                        <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+                    </div>
+                    <div fxFlex fxLayout="row" fxLayoutAlign="start center" style="margin-left: 10px;">
+                        {{item.title}}
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR FOOTER -->
+        <div class="app-sidebar-footer" style="overflow-x: hidden;" [style.border-top]="borderSidebarFooter"
+            fxLayout="row" fxLayoutAlign="center center">
+            <button mat-button (click)="logout($event)">
+                <mat-icon style="margin-right: 10px;" *ngIf="logoutIcon">{{logoutIcon}}</mat-icon>{{textLogout}}
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div style="height: 100%;width:100%; min-width: 0px !important;" fxLayout="column"
+        fxLayoutAlign="space-between stretch">
+        <div *ngIf="show" class="app-header">
+            <ngx-mat-menu-header [theme]="themeHeader" [visibleNotif]="visibleNotif" [srcLogo]="srcLogo"
+                [widthLogo]="widthLogo" [heightLogo]="heightLogo" (showMenu)="setMenu($event)"
+                (showNotif)="showNotif($event)" [badge]="badge" [borderHeader]="borderHeader"></ngx-mat-menu-header>
+        </div>
+        <div fxFlex (swipeleft)="showMenu ? setMenu(false) : ''" (swiperight)="show === true ? setMenu(true) : null"
+            style="height: 100%; width: 100%;">
+            <ng-content></ng-content>
+        </div>
+    </div>
+
+    <div class="app-small-blur" style="height: 100%;width: 100%; position: absolute;"
+        *ngIf="showMenu && showHeader && posSidebar === 'absolute'" (click)="setMenu(false)"
+        (swipeleft)="setMenu(false)">
+    </div>
+</div>
