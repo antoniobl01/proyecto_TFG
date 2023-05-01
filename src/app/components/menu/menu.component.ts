@@ -25,6 +25,8 @@ export class MenuComponent {
   visibleNotif: boolean;
   badge: number = 1;
 
+  profileJson: string = null;
+
   constructor(
     private router: Router,
     public auth: AuthService,
@@ -44,12 +46,15 @@ export class MenuComponent {
     ];
     this.badgeColor = '#9ee6b1';
     this.logoutIcon = undefined;
-    this.srcLogo = 'assets/logo.jpg';
+    this.srcLogo = 'assets/logo.PNG';
     this.lang = 'en';
     this.visibleNotif = true;
   }
 
   ngOnInit(): void {
+    this.auth.user$.subscribe(
+      (profile) => (this.profileJson = JSON.stringify(profile, null, 2)),
+    );
     this.router.navigate(['home']);
   }
 

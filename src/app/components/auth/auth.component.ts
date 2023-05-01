@@ -7,7 +7,7 @@ import { NgxMatMenuService } from '../../../lib/public-api';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
+  styleUrls: ['./auth.component.scss', '../../shared/shared.component.scss'],
 })
 export class AuthComponent {
   constructor(

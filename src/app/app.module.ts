@@ -24,6 +24,11 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { AuthComponent } from './components/auth/auth.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { SharedComponent } from './shared/shared.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,9 @@ import { MenuComponent } from './components/menu/menu.component';
     AuthComponent,
     UserInfoComponent,
     MenuComponent,
+    SharedComponent,
+    HeaderComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,7 @@ import { MenuComponent } from './components/menu/menu.component';
     FlexLayoutModule,
     MatTableModule,
     MatButtonModule,
+    MatCardModule,
     MatDialogModule,
     HammerModule,
     AuthModule.forRoot({
@@ -56,7 +65,8 @@ import { MenuComponent } from './components/menu/menu.component';
       authorizationParams: {
         redirect_uri: window.location.origin
       }
-    })
+    }),
+    NgbModule
   ],
   entryComponents: [
     DialogTestComponent
