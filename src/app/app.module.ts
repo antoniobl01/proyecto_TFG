@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatMenuModule } from './../lib/ngx-mat-menu.module';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AppRoutingModule } from './app-routing.module';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { DialogTestComponent } from './dialogs/dialog-test/dialog-test.component';
@@ -19,11 +19,15 @@ import { EditComponent } from './components/edit/edit.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { ListComponent } from './components/list/list.component';
 
+//authentication
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthComponent } from './components/auth/auth.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     SettingsComponent,
     DialogTestComponent,
@@ -31,6 +35,9 @@ import { ListComponent } from './components/list/list.component';
     EditComponent,
     DeleteComponent,
     ListComponent,
+    AuthComponent,
+    UserInfoComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,14 @@ import { ListComponent } from './components/list/list.component';
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    HammerModule
+    HammerModule,
+    AuthModule.forRoot({
+      domain: 'dev-87n5xdknhasjfnfy.eu.auth0.com',
+      clientId: 'c1pHlI3FisjlFs2eCJ8lAo3lXo4VwnIA',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    })
   ],
   entryComponents: [
     DialogTestComponent
