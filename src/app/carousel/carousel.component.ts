@@ -7,7 +7,13 @@ import { Carousel } from '../interface/interfaces';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
-	images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+	// images : string = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+  images = [
+    '../../assets/img/login_img.jpg',
+    '../../assets/img/login_img.jpg',
+    '../../assets/img/login_img.jpg'
+  ]
 
   sections : Carousel[] = [
     {

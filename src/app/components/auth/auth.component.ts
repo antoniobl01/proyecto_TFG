@@ -10,13 +10,17 @@ import { NgxMatMenuService } from '../../../lib/public-api';
   styleUrls: ['./auth.component.scss', '../../shared/shared.component.scss'],
 })
 export class AuthComponent {
+
   constructor(
       @Inject(DOCUMENT) public document: Document, 
       public auth: AuthService,
       private menuService: NgxMatMenuService,
-      private router: Router
+      private router: Router,
     ) {
     this.menuService.changeMenu(true);
+  }
+
+  ngOnInit(): void {
   }
 
 }

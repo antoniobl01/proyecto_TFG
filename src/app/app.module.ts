@@ -14,7 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { DialogTestComponent } from './dialogs/dialog-test/dialog-test.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddComponent } from './components/add/add.component'
+import { AddComponent } from './product/add/add.component'
 import { EditComponent } from './components/edit/edit.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { ListComponent } from './components/list/list.component';
@@ -29,6 +29,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { UnsplashComponent } from './images/unsplash/unsplash.component';
+import { ProductsComponent } from './product/products/products.component';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
+import { DevicesMapComponent } from './devices-map/devices-map.component';
+import { GoogleMapsModule } from '@angular/google-maps' ;
 
 @NgModule({
   declarations: [
@@ -46,18 +54,19 @@ import { MatCardModule } from '@angular/material/card';
     SharedComponent,
     HeaderComponent,
     CarouselComponent,
+    UnsplashComponent,
+    ProductsComponent,
+    DevicesMapComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     NgxMatMenuModule,
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     FlexLayoutModule,
-    MatTableModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
     HammerModule,
     AuthModule.forRoot({
       domain: 'dev-87n5xdknhasjfnfy.eu.auth0.com',
@@ -66,7 +75,14 @@ import { MatCardModule } from '@angular/material/card';
         redirect_uri: window.location.origin
       }
     }),
-    NgbModule
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatDialogModule,
+    MatExpansionModule,
+    NgbModule,
+    GoogleMapsModule
   ],
   entryComponents: [
     DialogTestComponent
