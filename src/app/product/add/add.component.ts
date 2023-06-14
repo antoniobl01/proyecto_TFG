@@ -17,7 +17,7 @@ export class AddComponent implements OnInit {
     description: '',
     location: '',
     user: '',
-    date: ''
+    date: new Date()
   };
 
   constructor(

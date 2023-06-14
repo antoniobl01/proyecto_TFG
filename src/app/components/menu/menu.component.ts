@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit, OnChanges {
   widthLogo: string = "";
   lang: string;
   visibleNotif: boolean;
-  badge: number = 1;
+  badge: number = this.productService.buyedProducts.length;
 
   profileJson: string = null;
 

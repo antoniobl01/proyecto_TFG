@@ -41,7 +41,8 @@
   }
 
   mat-card-header {
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-between;
     padding-left: 10px;
     margin-bottom: 10px;
   }
@@ -109,7 +110,6 @@
 
 .center {
   width: 50%;
-  height: 85%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -121,14 +121,7 @@
 
 }
 
-.img-container {
-  img {
-    width: 50px;
-    height: 50px;
-  }
-}
 
 .col {
   padding: 4px 0px;
 }
-

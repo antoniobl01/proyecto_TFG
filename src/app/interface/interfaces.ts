@@ -15,7 +15,7 @@ export interface Product {
   description: string;
   location: string;
   user: string;
-  date: string;
+  date: Date;
 }
 
 export interface Article {

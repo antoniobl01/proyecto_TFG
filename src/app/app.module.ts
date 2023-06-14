@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatMenuModule } from './../lib/ngx-mat-menu.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -59,7 +59,7 @@ import { BlogArticleComponent } from './blog/blog-article/blog-article.component
     ProductsComponent,
     DevicesMapComponent,
     BlogComponent,
-    BlogArticleComponent
+    BlogArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,7 +89,7 @@ import { BlogArticleComponent } from './blog/blog-article/blog-article.component
   entryComponents: [
     DialogTestComponent
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

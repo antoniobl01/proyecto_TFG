@@ -3,15 +3,9 @@
     <mat-list-item *ngFor="let p of products; let i = index">
       <mat-card class="card">
         <mat-card-header>
-          <div class="img-container">
-            <img src="../../../assets/img/products/1.jpg" alt="">
-          </div>
-          <!-- <div class="btn prueba h-auto">
-            <i class="bi bi-bag-fill"></i>
-            Añadir
-          </div> -->
-          <i class="bi bi-bag-fill" (click)="buy(products, p)"></i>
+          <img src="../../../assets/img/products/{{i+1}}.jpg" alt="" width="100px" height="100px">
 
+          <i class="bi bi-bag-fill" (click)="buy(products, p)"></i>
         </mat-card-header>
 
 
@@ -37,11 +31,8 @@
 
           <div class="col">
             <i class="bi bi-calendar-event"></i>
-            {{p.date}}
+            {{ p.date | date:'dd/MM/yyyy' }}
           </div>
-
-
-
         </mat-expansion-panel>
       </mat-card>
     </mat-list-item>

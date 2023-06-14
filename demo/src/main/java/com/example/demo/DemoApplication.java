@@ -30,9 +30,9 @@ public class DemoApplication {
 //			Product product2 = new Product("2222", "ffff", "Calee", "PEPE");
 //			productService.saveProduct(product2);
 
-			Date date = new Date(20230502);
-			Product product3 = new Product("3333", "ffff", "Calee", "PEPE", date);
-			productController.addProduct(product3);
+//			Date date = new Date(20230502);
+//			Product product3 = new Product("3333", "ffff", "Calee", "PEPE", date);
+//			productController.addProduct(product3);
 
 			productRepository.findAll().forEach(System.out::println);
 		};
