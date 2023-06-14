@@ -11,25 +11,26 @@ export class CarouselComponent {
 
   images = [
     '../../assets/img/login_img.jpg',
+    '../../assets/img/carousel/movil_img.jpg',
     '../../assets/img/carousel/blog_img.jpg',
-    '../../assets/img/carousel/mapa_img.jpg',
+    
   ]
 
   sections : Carousel[] = [
     {
       img : this.images[0],
       title : "Feed",
-      description : "Recicla tu dispositivo"
+      description : "Recicla dispositivos publicados por otras personas"
     },
     {
       img : this.images[1],
-      title : "Blog",
-      description : "Aprende cómo reciclar la tecnología"
+      title : "Añade tu dispositivo",
+      description : "Colabora en la sostenibilidad. Aporta tu granito de arena"
     },
     {
       img : this.images[2],
-      title : "Mapa",
-      description : "Consulta los dispositivos de tu zona"
+      title : "Blog",
+      description : "Aprende cómo reciclar la tecnología"
     },
   ];
 }
