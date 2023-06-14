@@ -4,9 +4,11 @@
 			<img [src]="section.img" alt="Random first slide" />
 		</div>
 		<div class="carousel-caption">
-            
-			<h3>{{section.title}}</h3>
-			<p>{{section.description}}</p>
+			<div class="title">
+				<h3 style="display: block;">{{section.title}}</h3>
+				<p>{{section.description}}</p>
+			</div>
+			
 		</div>
 	</ng-template>
 </ngb-carousel>

@@ -3,6 +3,7 @@ import { NgxMatMenuService } from '../../../lib/public-api';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogTestComponent } from 'src/app/dialogs/dialog-test/dialog-test.component';
 import { AuthService } from '@auth0/auth0-angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,16 +14,17 @@ import { AuthService } from '@auth0/auth0-angular';
 export class HomeComponent implements OnInit {
 
   showMenu: boolean = true;
-  
+
   constructor(
     public dialog: MatDialog,
     private menuService: NgxMatMenuService,
-    public auth: AuthService
+    public auth: AuthService,
+    private router: Router,
   ) {
     menuService.changeMenu(true);
     menuService.selectMenu(0);
-    
-   }
+
+  }
 
   ngOnInit() {
   }
@@ -30,6 +32,10 @@ export class HomeComponent implements OnInit {
   changeMenu() {
     this.showMenu = !this.showMenu;
     this.menuService.changeMenu(this.showMenu);
+  }
+
+  navigate(path : string) {
+    this.router.navigate([path])
   }
 
 }

@@ -1,6 +1,62 @@
 <div fxLayout="column">
     <!-- <button mat-button (click)="changeMenu()">Change Menu</button> -->
+    <div class="container">
+        <div class="row container-flex">
+            <mat-card class="col-md-3 col-xs-12">
+                <mat-card-header>
+                    <mat-card-title>Home</mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/img/home_img.jpg" alt="Imagen del artículo">
+                <mat-card-content>
+                    Página principal con información sobre las secciones
+                </mat-card-content>
+                <mat-card-actions>
+                    <!-- <button mat-button (click)="navigate('home')">Ir</button> -->
+                </mat-card-actions>
+            </mat-card>
 
+            <mat-card class="col-md-3 col-xs-12">
+                <mat-card-header>
+                    <mat-card-title>Feed</mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/img/article_blog.jpeg" alt="Imagen del artículo">
+                <mat-card-content>
+                    Recicla dispositivos y añade los que más te interesen
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="navigate('products')">Ir</button>
+                </mat-card-actions>
+            </mat-card>
 
+            <mat-card class="col-md-3 col-xs-12">
+                <mat-card-header>
+                    <mat-card-title>Nuevo dispositivo</mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/img/login_img.jpg" alt="Imagen del artículo">
+                <mat-card-content>
+                    Añade un dispositivo para colaborar con el medioambiente
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="navigate('add')">Ir</button>
+                </mat-card-actions>
+            </mat-card>
 
+            <mat-card class="col-md-3 col-xs-12">
+                <mat-card-header>
+                    <mat-card-title>Blog</mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="../../../assets/img/carousel/blog_img.jpg" alt="Imagen del artículo">
+                <mat-card-content>
+                    Lee los ultimos articulos sobre dispositivos y como reciclarlos
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="navigate('blog')">Ir</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
 </div>

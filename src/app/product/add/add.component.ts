@@ -8,43 +8,47 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  styleUrls: ['./add.component.scss', '../../shared/shared.component.scss']
 })
-export class AddComponent implements OnInit, OnChanges{
+export class AddComponent implements OnInit {
 
-  newProduct : Product;
+  newProduct : Product = {
+    title: '',
+    description: '',
+    location: '',
+    user: '',
+    date: ''
+  };
 
   constructor(
     private menuService: NgxMatMenuService,
-    private router: Router, 
+    private router: Router,
     private http: HttpClient,
     private productService : ProductService
     ) {
       menuService.changeMenu(true);
       menuService.selectMenu(2);
-      this.newProduct = {
-        title : 'dddd',
-        description : 'ffff',
-        location : 'Calee',
-        user : 'PEPE',
-        date : '2023-05-02 08:00:00'
-      };
+      // this.newProduct = {
+      //   title : 'dddd',
+      //   description : 'ffff',
+      //   location : 'Calee',
+      //   user : 'PEPE',
+      //   date : '2023-05-02 08:00:00'
+      // };
   }
 
   async ngOnInit() {
-    this.productService.saveProduct(this.newProduct).subscribe(result => 
-      console.log(result)
-    );
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
     console.log(this.newProduct)
+    // this.productService.saveProduct(this.newProduct).subscribe(result =>
+    //   console.log(result)
+    // );
   }
 
   onSubmit() {
-    this.productService.saveProduct(this.newProduct).subscribe(result => 
-      console.log(result)
-    );
+    console.log(this.newProduct);
+    // this.productService.saveProduct(this.newProduct).subscribe(result =>
+    //   console.log(result)
+    // );
   }
 
   gotoUserList() {

@@ -11,25 +11,25 @@ export class CarouselComponent {
 
   images = [
     '../../assets/img/login_img.jpg',
-    '../../assets/img/login_img.jpg',
-    '../../assets/img/login_img.jpg'
+    '../../assets/img/carousel/blog_img.jpg',
+    '../../assets/img/carousel/mapa_img.jpg',
   ]
 
   sections : Carousel[] = [
     {
       img : this.images[0],
-      title : "Prueba 1",
-      description : "Lorem ipsum 1"
+      title : "Feed",
+      description : "Recicla tu dispositivo"
     },
     {
       img : this.images[1],
-      title : "Prueba 2",
-      description : "Lorem ipsum 1"
+      title : "Blog",
+      description : "Aprende cómo reciclar la tecnología"
     },
     {
       img : this.images[2],
-      title : "Prueba 3",
-      description : "Lorem ipsum 3"
+      title : "Mapa",
+      description : "Consulta los dispositivos de tu zona"
     },
   ];
 }

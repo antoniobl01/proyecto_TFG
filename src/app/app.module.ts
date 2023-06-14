@@ -36,7 +36,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
 import { DevicesMapComponent } from './devices-map/devices-map.component';
-import { GoogleMapsModule } from '@angular/google-maps' ;
+import { BlogComponent } from './blog/blog.component';
+import { BlogArticleComponent } from './blog/blog-article/blog-article.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import { GoogleMapsModule } from '@angular/google-maps' ;
     CarouselComponent,
     UnsplashComponent,
     ProductsComponent,
-    DevicesMapComponent
+    DevicesMapComponent,
+    BlogComponent,
+    BlogArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,6 @@ import { GoogleMapsModule } from '@angular/google-maps' ;
     MatDialogModule,
     MatExpansionModule,
     NgbModule,
-    GoogleMapsModule
   ],
   entryComponents: [
     DialogTestComponent

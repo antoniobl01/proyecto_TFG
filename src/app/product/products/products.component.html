@@ -1,43 +1,49 @@
 <div class="container center" style="overflow: hidden;">
-    <mat-list class="content">
-        <mat-list-item *ngFor="let p of products; let i = index">
-            <mat-card class="card">
-                <mat-card-header>
-    
-                </mat-card-header>
-                <div class="img-container">
-                    <img src="../../../assets/img/products/1.jpg" alt="">
-                </div>
-                    
-                <mat-card-content>
-                    <mat-card-title>{{p.title}}</mat-card-title>
-                </mat-card-content>
-    
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                    <mat-expansion-panel-header>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        {{p.location}}
-                    </mat-expansion-panel-header>
+  <mat-list class="content">
+    <mat-list-item *ngFor="let p of products; let i = index">
+      <mat-card class="card">
+        <mat-card-header>
+          <div class="img-container">
+            <img src="../../../assets/img/products/1.jpg" alt="">
+          </div>
+          <!-- <div class="btn prueba h-auto">
+            <i class="bi bi-bag-fill"></i>
+            Añadir
+          </div> -->
+          <i class="bi bi-bag-fill" (click)="buy(products, p)"></i>
 
-                    <div class="col">
-                        <i class="bi bi-info-circle"></i>
-                        {{p.description}}
-                    </div>
+        </mat-card-header>
 
-                    <div class="col">
-                        <i class="bi bi-person-circle"></i>
-                        {{p.user}}
-                    </div>
 
-                    <div class="col">
-                        <i class="bi bi-calendar-event"></i>
-                        {{p.date}}
-                    </div>
-                    
-                        
-    
-                </mat-expansion-panel>
-            </mat-card>
-        </mat-list-item>
-    </mat-list>
+        <mat-card-content>
+          <mat-card-title>{{p.title}}</mat-card-title>
+        </mat-card-content>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <i class="bi bi-geo-alt-fill"></i>
+            {{p.location}}
+          </mat-expansion-panel-header>
+
+          <div class="col">
+            <i class="bi bi-info-circle"></i>
+            {{p.description}}
+          </div>
+
+          <div class="col">
+            <i class="bi bi-person-circle"></i>
+            {{p.user}}
+          </div>
+
+          <div class="col">
+            <i class="bi bi-calendar-event"></i>
+            {{p.date}}
+          </div>
+
+
+
+        </mat-expansion-panel>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
 </div>

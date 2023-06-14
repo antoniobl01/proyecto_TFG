@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { Theme } from '../../interfaces/menu-models';
+import { ProductService } from 'src/app/product/product.service';
 
 @Component({
   selector: 'ngx-mat-menu-header',
@@ -18,7 +19,9 @@ export class HeaderComponent implements OnInit, OnChanges {
   @Input() borderHeader: string;
   @Output() showMenu = new EventEmitter();
   @Output() showNotif = new EventEmitter();
-  constructor() {
+  constructor(
+    public productService: ProductService
+    ) {
   }
 
   ngOnInit() {
@@ -27,6 +30,8 @@ export class HeaderComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.heightLogo = this.heightLogo ? this.heightLogo : 'auto';
     this.widthLogo = this.widthLogo ? this.widthLogo : 'auto';
+
+    // this.badge = this.productService.buyedProducts.length;
   }
 
   btnShowMenu_Click() {

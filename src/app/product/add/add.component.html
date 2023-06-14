@@ -1,30 +1,42 @@
-
-  <p>ADDD WORKS</p>
-<!-- <div class="card my-5">
+<div class="container">
+  <div class="card my-5">
     <div class="card-body">
+      <h1>Nuevo dispositivo</h1>
       <form (ngSubmit)="onSubmit()" #newProductForm="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [(ngModel)]="newProduct.title" 
-            class="form-control" 
-            id="name" 
-            name="name" 
-            placeholder="Enter your name"
-            required #name="ngModel">
+          <input type="text" [(ngModel)]="newProduct.title" class="form-control" id="name" name="name"
+            placeholder="Enter your name" required #name="ngModel">
         </div>
-        <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
-        <div class="form-group">
+        <!-- <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div> -->
+        <!-- <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" [(ngModel)]="newProduct.description" 
-            class="form-control" 
-            id="email" 
-            name="email" 
-            placeholder="Enter your email address"
-            required #email="ngModel">
+          <input type="text" [(ngModel)]="newProduct.description" class="form-control" id="email" name="email"
+            placeholder="Enter your email address" required #email="ngModel">
           <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
+        </div> -->
+        <div class="form-group">
+          <label for="description">Descripción:</label>
+          <textarea [(ngModel)]="newProduct.description" class="form-control" id="description" name="description" required></textarea>
         </div>
-        <button type="submit" [disabled]="!newProductForm.form.valid" 
-          class="btn btn-info">Submit</button>
+        <div class="form-group">
+          <label for="location">Ubicación:</label>
+          <input type="text" [(ngModel)]="newProduct.location" class="form-control" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+          <label for="user">Usuario:</label>
+          <input type="text" [(ngModel)]="newProduct.user" class="form-control" id="user" name="user" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="date" [(ngModel)]="newProduct.date" class="form-control" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" [disabled]="!newProductForm.form.valid" class="button-5">Crear</button>
+        </div>
       </form>
     </div>
-  </div> -->
+  </div>
+
+</div>

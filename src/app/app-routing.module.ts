@@ -8,6 +8,8 @@ import { EditComponent } from './components/edit/edit.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { ListComponent } from './components/list/list.component';
 import { ProductsComponent } from './product/products/products.component';
+import { BlogArticleComponent } from './blog/blog-article/blog-article.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 const routes: Routes = [
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path: 'list',
     component: ListComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'blog-article',
+    component: BlogArticleComponent
   },
 ];
 

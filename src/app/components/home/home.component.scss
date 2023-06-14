@@ -1,3 +1,39 @@
-h3 {
-    background-color: red;
-}
+
+.container-flex {
+    padding-top: 16px;
+    display: flex;
+    justify-content: start;
+  
+    mat-card {
+  
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 200px;
+        padding: 5px 0px;
+      }
+  
+      .mat-mdc-card-content {
+        padding: 0px !important;
+        margin: 10px 0px;
+        text-align: justify;
+      }
+
+      .mat-mdc-card-header {
+        padding: 0px;
+        padding-top: 8px;
+        justify-content: center;
+      }
+    }
+  
+    mat-card-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }

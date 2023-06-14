@@ -9,9 +9,10 @@ import { NgxMatMenuService } from '../../../lib/public-api';
 export class ListComponent implements OnInit {
 
   constructor(private menuService: NgxMatMenuService
-    ) {
-      menuService.changeMenu(true);
-      menuService.selectMenu(5); }
+  ) {
+    menuService.changeMenu(true);
+    menuService.selectMenu(5);
+  }
 
   ngOnInit(): void {
   }

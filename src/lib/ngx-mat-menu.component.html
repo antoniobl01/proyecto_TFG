@@ -6,7 +6,7 @@
 
         <!-- SIDEBAR HEADER -->
         <div class="app-sidebar-header" [style.border-bottom]="borderSidebarHeader" [ngStyle]="themeSidebarHeader">
-            <!-- 
+            <!--
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-icon style="margin-right: 10px;" *ngIf="headerIcon">{{headerIcon}}</mat-icon> {{headerText}}
             </div>
@@ -118,7 +118,7 @@
         <!-- SIDEBAR FOOTER -->
         <div class="app-sidebar-footer" style="overflow-x: hidden;" [style.border-top]="borderSidebarFooter"
             fxLayout="row" fxLayoutAlign="center center">
-            <button mat-button (click)="logout($event)">
+            <button mat-button (click)="logout($event)" style="color: white;">
                 <mat-icon style="margin-right: 10px;" *ngIf="logoutIcon">{{logoutIcon}}</mat-icon>{{textLogout}}
             </button>
         </div>
